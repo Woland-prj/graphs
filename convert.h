@@ -13,19 +13,19 @@ size_t Split(const std::string &txt, std::vector<int> &nums, char ch)
     while(pos != std::string::npos)
     {
         const std::string text = txt.substr(initialPos, pos - initialPos);
-        if(!text.empty() || text != "0") nums.push_back(stoi(text));
+        if(!text.empty() && text != "0") nums.push_back(stoi(text));
         initialPos = pos + 1;
 
         pos = txt.find(ch, initialPos);
     }
 
     const std::string text = txt.substr(initialPos, std::min(pos, txt.size()) - initialPos + 1);
-    if(!text.empty() || text != "0") nums.push_back(stoi(text));
+    if(!text.empty() && text != "0") nums.push_back(stoi(text));
 
     return nums.size();
 }
 
-void GetInitData(std::ifstream& inFile, int& edgeCount, int& topCount)
+void GetInitData(std::ifstream& inFile, int& topCount, int& edgeCount)
 {
     std::string initDataStr;
     std::vector<int> initDataArr;
@@ -52,6 +52,32 @@ void GetInitData(std::ifstream& inFile, int& edgeCount, int& topCount)
         exit(2);
     }
 }
+
+void GetInitData(std::ifstream& inFile, int& topCount) {
+    std::string initDataStr;
+    std::vector<int> initDataArr;
+    initDataArr.clear();
+    try {
+        bool closeFileException = false;
+        if(!inFile.is_open()) {
+            closeFileException = true;
+            throw closeFileException;
+        }
+        std::getline(inFile, initDataStr);
+        size_t data_len = Split(initDataStr, initDataArr, ' ');
+        if (data_len != 2 || initDataArr[0] == 0 || initDataArr[1] == 0)
+            throw initDataStr;
+        topCount = initDataArr[1];
+    }
+    catch (const std::string& initInf) {
+        std::cout << "Incorrect file header: " << initInf << std::endl;
+        exit(1);
+    }
+    catch (const bool& closeFileException) {
+        std::cout << "This file is not exist or path is incorrect" << std::endl;
+        exit(2);
+    }
+};
 
 void InitializeMatrix(Matrix& matrix, int topCount)
 {
@@ -80,27 +106,18 @@ void printMatrix(Matrix& matrix)
     }
 }
 
-void ToAdjacencyMatrix(const std::string& fileName)
-{
-    Matrix adjMatrix(0, std::vector<int>(0));
-    std::vector<int> dataNums;
-
-    std::ifstream inFile(fileName);
-    std::string str;
-    int edgeCount = 0;
-    int topCount = 0;
+size_t ReadEdges(std::ifstream& inFile, Matrix& adjMatrix, int edgeCount, int topCount) {
     int realEdgeCount = 0;
-
-    GetInitData(inFile, edgeCount, topCount);
-    InitializeMatrix(adjMatrix, topCount);
-
-    while (std::getline(inFile, str) && realEdgeCount < edgeCount - 1)
+    std::string str;
+    while (std::getline(inFile, str) && realEdgeCount < edgeCount)
     {
+        std::vector<int> dataNums;
         try
         {
             realEdgeCount ++;
-            std::cout << str << std::endl;
             const size_t nums_size = Split(str, dataNums, ' ');
+            if (nums_size == 0 )
+                continue;
             if (nums_size != 3 )
                 throw str;
             const int top1 = dataNums[0];
@@ -117,10 +134,41 @@ void ToAdjacencyMatrix(const std::string& fileName)
             exit(3);
         }
     }
+    return realEdgeCount;
+}
+
+void ToAdjacencyMatrix(const std::string& fileName, Matrix& adjMatrix)
+{
+    std::ifstream inFile(fileName);
+
+    int edgeCount = 0;
+    int topCount = 0;
+
+    GetInitData(inFile, topCount, edgeCount);
+    InitializeMatrix(adjMatrix, topCount);
+    size_t realEdgeCount = ReadEdges(inFile, adjMatrix, edgeCount, topCount);
+
     if (realEdgeCount < edgeCount)
     {
-        std::cout << "The number of edges indicated in the header - " << edgeCount << " does not match the number of edges read - " << realEdgeCount << str << std::endl;
+        std::cout << "The number of edges indicated in the header - " << edgeCount << " does not match the number of edges read - " << realEdgeCount << std::endl;
         exit(4);
     }
-    printMatrix(adjMatrix);
+}
+
+using EdgeList = std::vector<std::string>;
+
+void ToEdgeList(Matrix& adjMatrix, EdgeList& edgeList) {
+    edgeList.clear();
+    for(size_t i = 0; i < adjMatrix.size(); i++)
+    {
+        for(size_t j = 0; j < i; j++)
+            if(adjMatrix[i][j] != 0)
+                edgeList.emplace_back(std::to_string(i + 1) + ' ' + std::to_string(j + 1) +  ' ' + std::to_string(adjMatrix[i][j]));
+    }
+}
+
+void PrintEdgeList(EdgeList& edgeList)
+{
+    for(const auto & i : edgeList)
+        std::cout << i << std::endl;
 }
