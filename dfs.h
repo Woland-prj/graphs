@@ -46,7 +46,7 @@ void DFS(CMatrix& dataMatrix, int top, int connMark, ComponentListArr& listArr)
     std::stack<int> st;
     ComponentList list = {
             .mark = connMark,
-
+            .tops = std::vector<int>(0)
     };
     TVisited visited;
     st.push(top);
@@ -60,7 +60,8 @@ void DFS(CMatrix& dataMatrix, int top, int connMark, ComponentListArr& listArr)
             {
                 st.push(i);
                 visited.push_back(top);
-                std::cout << "Вершина: " << top + 1 << " Связаннные с ней вершины: "<< i + 1 << std::endl;
+                list.tops.push_back(i);
             }
     }
+    listArr.push_back(list);
 }
