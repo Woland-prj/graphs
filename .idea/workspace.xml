@@ -20,21 +20,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7aec1a9-a875-458f-8db7-f0f1bd4b201c" name="Changes" comment="начало компонента связности">
-      <change afterPath="$PROJECT_DIR$/.idea/graphs.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ccs.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomatrix.cpp" afterDir="false" />
+    <list default="true" id="e7aec1a9-a875-458f-8db7-f0f1bd4b201c" name="Changes" comment="рабочий компонент чвязности">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConnectivityComponentS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adjacency_matrix.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dfs.h" beforeDir="false" afterPath="$PROJECT_DIR$/dfs.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edge_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/edge_list.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +140,7 @@
       <workItem from="1702963436472" duration="2000" />
       <workItem from="1702963778877" duration="5220000" />
       <workItem from="1702990971975" duration="1876000" />
-      <workItem from="1703006060756" duration="7090000" />
+      <workItem from="1703006060756" duration="7543000" />
     </task>
     <task id="LOCAL-00001" summary="/">
       <option name="closed" value="true" />
@@ -241,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702997823111</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="рабочий компонент чвязности">
+      <option name="closed" value="true" />
+      <created>1703014864511</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703014864512</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +268,7 @@
     <MESSAGE value="Рабочая версия bfs" />
     <MESSAGE value="возвпащение dfs" />
     <MESSAGE value="начало компонента связности" />
-    <option name="LAST_COMMIT_MESSAGE" value="начало компонента связности" />
+    <MESSAGE value="рабочий компонент чвязности" />
+    <option name="LAST_COMMIT_MESSAGE" value="рабочий компонент чвязности" />
   </component>
 </project>
