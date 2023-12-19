@@ -1,5 +1,5 @@
 #include "convert.h"
-#include "dfs.h"
+#include "bfs.h"
 
 int main(int argc, char* argv[]) {
     if(argc < 2)
@@ -9,5 +9,5 @@ int main(int argc, char* argv[]) {
     }
     CEdgeList list(argv[1]);
     CMatrix matrix(list.listData);
-    DFS(matrix, 0);
+    BFS(matrix, 0);
 }

@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(graphs
         main.cpp
         convert.h
-        dfs.h)
+        dfs.h
+        bfs.h)
