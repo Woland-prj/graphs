@@ -1,4 +1,5 @@
 #include "convert.h"
+#include "dfs.h"
 
 int main(int argc, char* argv[]) {
     if(argc < 2)
@@ -7,12 +8,6 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
     CEdgeList list(argv[1]);
-    CEdgeList outputList;
     CMatrix matrix(list.listData);
-    std::cout << "Adjacency matrix:" << std::endl;
-    matrix.PrintMatrix();
-    matrix.ToEdgeList(outputList);
-    std::cout << std::endl;
-    std::cout << "New edge list:" << std::endl;
-    outputList.PrintEdgeList();
+    DFS(matrix, 0);
 }

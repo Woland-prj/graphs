@@ -1,3 +1,4 @@
+#pragma once
 #include <fstream>
 #include <iostream>
 #include <vector>
@@ -160,6 +161,11 @@ public:
     explicit CMatrix(CEdgeList::EdgeList& list)
     {
         ToAdjacencyMatrix(list, matrixData);
+    }
+
+    explicit CMatrix(size_t size)
+    {
+        InitializeMatrix(matrixData, size);
     }
 
     void PrintMatrix() const
