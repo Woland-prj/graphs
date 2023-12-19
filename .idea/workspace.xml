@@ -20,9 +20,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7aec1a9-a875-458f-8db7-f0f1bd4b201c" name="Changes" comment="рабочий компонент чвязности">
+    <list default="true" id="e7aec1a9-a875-458f-8db7-f0f1bd4b201c" name="Changes" comment="рабочий компонент связности">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dfs.h" beforeDir="false" afterPath="$PROJECT_DIR$/dfs.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +139,7 @@
       <workItem from="1702963436472" duration="2000" />
       <workItem from="1702963778877" duration="5220000" />
       <workItem from="1702990971975" duration="1876000" />
-      <workItem from="1703006060756" duration="7543000" />
+      <workItem from="1703006060756" duration="7989000" />
     </task>
     <task id="LOCAL-00001" summary="/">
       <option name="closed" value="true" />
@@ -238,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703014864512</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="рабочий компонент связности">
+      <option name="closed" value="true" />
+      <created>1703015266061</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703015266061</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +276,7 @@
     <MESSAGE value="возвпащение dfs" />
     <MESSAGE value="начало компонента связности" />
     <MESSAGE value="рабочий компонент чвязности" />
-    <option name="LAST_COMMIT_MESSAGE" value="рабочий компонент чвязности" />
+    <MESSAGE value="рабочий компонент связности" />
+    <option name="LAST_COMMIT_MESSAGE" value="рабочий компонент связности" />
   </component>
 </project>
