@@ -7,4 +7,5 @@ add_executable(graphs
         main.cpp
         convert.h
         dfs.h
-        bfs.h)
+        bfs.h
+        ConnectivityComponentS.h)
